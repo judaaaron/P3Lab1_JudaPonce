@@ -36,18 +36,17 @@ int main(int argc, char** argv) {
 }
 
 int buscadorPrimos (int num){
-	int contadorDePrimos = 1, ceros = 0;
-	do{
-		if(num % contadorDePrimos == 0){
-			ceros++;
-		}
-		contadorDePrimos++;
-	}while(contadorDePrimos <= num);
-	
-	if(ceros == 2){
-		return 1;
-	}else{
-		return 0;
-	}
-	
+int ceros = 0, cont = 1;// Se declara y se inicializa 2 contadores, uno que controla el ciclo y otro que controla la cantida de residuo que sean igual a 0
+            while (cont <= num) {
+                if (num % cont == 0) {
+                    ceros++;
+                }
+                cont++;// Se incrementa este ciclo para que el ciclo no se haga infinito
+            }
+            if (ceros == 2) {// Se valida de que el contador de residuo igual a cero en total sea 2
+               return 1;
+
+            } else {
+              return 0;
+            }
 	}
